@@ -9,49 +9,6 @@ function List(props) {
 			return itemObj.label != key; //Va a devolver todos los items de la lista menos el item que hemos borrado
 		});
 		props.updateItemList(newList);
-		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/virginiak_martinez",
-			{
-				method: "PUT",
-				body: JSON.stringify(newList), //lo que le mando  a la base de datos
-				headers: {
-					"Content-Type": "application/json"
-				}
-			}
-		)
-			.then(resp => {
-				console.log(resp.json);
-				return resp.json();
-			})
-			.then(data => {
-				console.log(data);
-			})
-			.catch(error => {
-				console.log(error);
-			});
-	};
-	const deleteAll = () => {
-		const newList = [];
-		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/virginiak_martinez",
-			{
-				method: "PUT",
-				body: JSON.stringify(newList), //lo que le mando  a la base de datos
-				headers: {
-					"Content-Type": "application/json"
-				}
-			}
-		)
-			.then(resp => {
-				console.log(resp.json);
-				return resp.json();
-			})
-			.then(data => {
-				console.log(data);
-			})
-			.catch(error => {
-				console.log(error);
-			});
 	};
 	return (
 		<div>
@@ -60,10 +17,11 @@ function List(props) {
 				return (
 					<div key={index} className="Item">
 						<p>{itemObj.label}</p>
-						<button onClick={() => deleteItem(itemObj.label)}>
-							X
+						<button
+							className="buttonDeleteTask"
+							onClick={() => deleteItem(itemObj.label)}>
+							<i className="fas fa-minus" />
 						</button>
-						<button onClick={() => deleteAll()}>DeleteAll</button>
 					</div>
 				);
 			})}

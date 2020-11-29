@@ -1,24 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap');
+
 .Input-body{
     margin:auto;
     margin-top:5%;
     justify-content: space-between;
-  
+    
    
-    width: 600px;
+    width: 500px;
 }
 
 .Input-body input{
     border:none;
-    
-    width:300px;
+    height: 60px;
+    width:435px;
 }
 
 input [type=text]:active{
     outline: none;
 
+
 }
 
-.Input-body button{
+button{
+    text-decoration: none;
     border:none;
     background: none;
     font-size: 35px;
@@ -31,7 +35,24 @@ input [type=text]:active{
     margin-top:0px;
 }
 
-.button:focus {
+.buttonAddItem {
     outline:0;
     
+    font-size: 24px;
+    
     }
+
+.TaskCounter{
+    margin: auto;
+    margin-top:3%;
+    text-align: right;
+    width: 500px;
+    color:grey;
+    font-family: Source Code Pro;
+    /*background: green;*/
+    
+}
+
+input{
+    font-family: Source Code Pro;
+}
